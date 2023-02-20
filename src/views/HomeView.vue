@@ -1,20 +1,15 @@
-<!-- <script setup>
-import TheWelcome from "../components/TheWelcome.vue";
-</script> -->
-
-<script>
+<script setup>
 import TheWelcome from "../components/TheWelcome.vue";
 
-export default {
-  components: { TheWelcome },
-  data() {
-    return {
-      message: "Hi there!",
-    };
-  },
-  mounted() {
-    alert("I have been mounted");
-  },
+// eslint-disable-next-line no-undef
+let message = $ref("Hello, World!");
+
+// setTimeout(() => {
+//   message = "I have been changed";
+// }, 2000);
+
+let doSomething = () => {
+  alert("doing it now");
 };
 </script>
 
@@ -22,5 +17,9 @@ export default {
   <main>
     <TheWelcome />
     <p>{{ message }}</p>
+
+    <p>
+      <button @click="doSomething">Click Me</button>
+    </p>
   </main>
 </template>
