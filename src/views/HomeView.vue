@@ -1,25 +1,13 @@
 <script setup>
-import TheWelcome from "../components/TheWelcome.vue";
+import { useFlash } from "@/composables/useFlash.js";
 
-// eslint-disable-next-line no-undef
-let message = $ref("Hello, World!");
-
-// setTimeout(() => {
-//   message = "I have been changed";
-// }, 2000);
-
-let doSomething = () => {
-  alert("doing it now");
-};
+let { flash } = useFlash();
 </script>
 
 <template>
   <main>
-    <TheWelcome />
-    <p>{{ message }}</p>
-
     <p>
-      <button @click="doSomething">Click Me</button>
+      <button @click="flash('Test', 'It Works!')">Click me</button>
     </p>
   </main>
 </template>
