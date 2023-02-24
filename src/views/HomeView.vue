@@ -1,18 +1,9 @@
 <script setup>
-import { ref } from "vue";
-import TabbableTextarea from "@/components/TabbableTextarea.vue";
-
-let comment = ref("test value");
-
-setTimeout(() => {
-  comment.value = "it works!";
-}, 2000);
+import TheQuiz from "@/components/Quiz/TheQuiz.vue";
 </script>
 
 <template>
   <main>
-    <form>
-      <TabbableTextarea v-model="comment" style="width: 100%; height: 300px" />
-    </form>
+    <TheQuiz />
   </main>
 </template>
